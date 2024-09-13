@@ -7,6 +7,7 @@ from Pages.conftest import *
 
 def test_login(login_setup):
     driver = login_setup
+    
 
     try:
         WebDriverWait(driver, 20).until(
@@ -33,12 +34,12 @@ def test_login(login_setup):
     f.select_field(By.XPATH, "(//select[@id='pharmaSelect'])[2]", "Merck Sharp & Dohme")
     f.select_field(By.XPATH, "(//select[@id='pharmaSelect'])[4]", "Biomakers")
     f.text_field(By.XPATH, "//input[@class='uppercase large-form-text form-control']", "ASXNFJ23")
-    f.text_field(By.XPATH, "//input[@class='uppercase large-form-text form-control is-invalid']", "AR-0038")
+    f.text_field(By.XPATH, "//input[@class='uppercase large-form-text form-control is-invalid']", "AR-0039")
     WebDriverWait(driver, 10).until(EC.invisibility_of_element_located((By.XPATH,"//div[contains(@class,'invalid-feedback')]")))
     allure.attach(driver.get_screenshot_as_png(), name="habilitacion formulario", attachment_type=AttachmentType.PNG)
     f.scrollintoview(By.XPATH, "(//input[contains(@name,'code')])[2]")
     f.text_field(By.XPATH,"//input[contains(@placeholder,'Nombres del paciente')]", "Prueba")
-    f.text_field(By.XPATH, "//input[contains(@placeholder,'Apellidos del paciente')]", "Pytest9")
+    f.text_field(By.XPATH, "//input[contains(@placeholder,'Apellidos del paciente')]", "Pytest10")
     f.button("(//div[contains(@class,'meta')])[2]")
     f.scrollintoview(By.XPATH, "(//input[@type='text'])[5]")
     f.text_field(By.XPATH, "(//input[@type='number'])[1]", 12)

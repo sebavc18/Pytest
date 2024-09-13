@@ -1,2 +1,3 @@
 allurereports/
 venv/
+.env
