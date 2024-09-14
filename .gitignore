@@ -1,3 +1,8 @@
 allurereports/
 venv/
 .env
+code_db.sqlite
+init_db.py
+list_codes.py
+clear_codes.py
+insert_codes.py
