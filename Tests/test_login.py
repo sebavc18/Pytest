@@ -5,8 +5,9 @@ from Utils.common_imports import *
 from Pages.conftest import *
 
 
-def test_login(login_setup):
+def test_login(login_setup, code_setup):
     driver = login_setup
+    code = code_setup
     
 
     try:
@@ -34,7 +35,7 @@ def test_login(login_setup):
     f.select_field(By.XPATH, "(//select[@id='pharmaSelect'])[2]", "Merck Sharp & Dohme")
     f.select_field(By.XPATH, "(//select[@id='pharmaSelect'])[4]", "Biomakers")
     f.text_field(By.XPATH, "//input[@class='uppercase large-form-text form-control']", "ASXNFJ23")
-    f.text_field(By.XPATH, "//input[@class='uppercase large-form-text form-control is-invalid']", "AR-0039")
+    f.text_field(By.XPATH, "//input[@class='uppercase large-form-text form-control is-invalid']", code)
     WebDriverWait(driver, 10).until(EC.invisibility_of_element_located((By.XPATH,"//div[contains(@class,'invalid-feedback')]")))
     allure.attach(driver.get_screenshot_as_png(), name="habilitacion formulario", attachment_type=AttachmentType.PNG)
     f.scrollintoview(By.XPATH, "(//input[contains(@name,'code')])[2]")
