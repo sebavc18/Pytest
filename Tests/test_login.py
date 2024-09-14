@@ -70,21 +70,11 @@ def test_login(login_setup, code_setup):
     f.pop_up(By.XPATH, "//button[contains(.,'Cerrar')]")
     allure.attach(driver.get_screenshot_as_png(), name="pedido realizado", attachment_type=AttachmentType.PNG)
 
-
-
-
-
-
-
-    
-    
-    
-
-    
-
-
-
     time.sleep(2)
+
+
+def test_login2():
+    
 
 
   
